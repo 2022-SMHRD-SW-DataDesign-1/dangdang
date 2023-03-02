@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = "http://localhost:8083/";
+const BASE_URL = "http://localhost:8083";
 
 class ApiService {
 
@@ -8,13 +8,13 @@ class ApiService {
     return axios.post(BASE_URL, user);
   }
   LoginUser(user){
-    return axios.post(BASE_URL+"login", user)
+    return axios.post(BASE_URL+"/login", user)
   }
   register(product){
-    return axios.post(BASE_URL+"cart", product)
+    return axios.post(BASE_URL+"/cart", product)
   }
   LoadMember(){
-    return axios.get(BASE_URL+"loadMember")
+    return axios.get(BASE_URL+"/loadMember")
   }
 
 }

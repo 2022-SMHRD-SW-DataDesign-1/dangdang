@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 const TestInfo = () => {
 
     // const [변수, 변수를 다룰 함수] = usestate(초기값)
-    const [Id, SetId] = useState("")
-    const [Password, SetPassword] = useState("")
-    const [Email, SetEmail] = useState("")
-    const [Name, SetName] = useState("")
-    const [Phone, SetPhone] = useState("")
-    const [Address, SetAddress] = useState("")
+    const [id, SetId] = useState("")
+    const [password, SetPassword] = useState("")
+    const [email, SetEmail] = useState("")
+    const [name, SetName] = useState("")
+    const [phone, SetPhone] = useState("")
+    const [address, SetAddress] = useState("")
 
     // 회원가입 submit 버튼을 클릭하면 실행되는 함수
 
@@ -20,12 +20,12 @@ const TestInfo = () => {
         // 회원가입에 필요한 정보를 객체로 생성
 
         const user = {
-            id: Id,
-            pwd: Password,
-            email: Email,
-            phone: Phone,
-            address: Address,
-            name: Name
+            id: id,
+            password: password,
+            email: email,
+            phone: phone,
+            address: address,
+            name: name
         };
          // APIservice.joinuser 함수를 호출할때 매개변수로 전달 
         // try-catch 구문을 사용 회원가인 성공/실패 여부 확인
@@ -44,15 +44,15 @@ const TestInfo = () => {
             <div>
                 <form onSubmit={handleSignup}>
                     <h3>회원가입</h3>
-                    <input type="text" onChange={(e) => SetId(e.target.value)} value={Id} placeholder='아이디를 입력해주세요' /><br />
+                    <input type="text" onChange={(e) => SetId(e.target.value)} value={id} placeholder='아이디를 입력해주세요' /><br />
                     {/* 비밀번호 */}
-                    <input type="password" onChange={(e) => SetPassword(e.target.value)} value={Password} placeholder='비밀번호' /><br />
+                    <input type="password" onChange={(e) => SetPassword(e.target.value)} value={password} placeholder='비밀번호' /><br />
                     <input type="password" placeholder='비밀번호 확인' /><br />
                     {/* {Password !== ConfirmPw && <p>비밀번호가 일치하지 않습니다.</p>} */}
-                    <input type="Email" onChange={(e) => SetEmail(e.target.value)} value={Email} placeholder='이메일' /><br />
-                    <input type="text" onChange={(e) => SetPhone(e.target.value)} value={Phone} placeholder='phone' /><br />
-                    <input type="text" onChange={(e) => SetAddress(e.target.value)} value={Address} placeholder='주소' /><br />
-                    <input type="text" onChange={(e) => SetName(e.target.value)} value={Name} placeholder='이름' /><br />
+                    <input type="Email" onChange={(e) => SetEmail(e.target.value)} value={email} placeholder='이메일' /><br />
+                    <input type="text" onChange={(e) => SetPhone(e.target.value)} value={phone} placeholder='phone' /><br />
+                    <input type="text" onChange={(e) => SetAddress(e.target.value)} value={address} placeholder='주소' /><br />
+                    <input type="text" onChange={(e) => SetName(e.target.value)} value={name} placeholder='이름' /><br />
                     {/* <input type="text" onChange={(e) => SetDetail(e.target.value)} value={Detail} placeholder='상세주소' /><br /> */}
                     <input type="submit" />
                 </form>
