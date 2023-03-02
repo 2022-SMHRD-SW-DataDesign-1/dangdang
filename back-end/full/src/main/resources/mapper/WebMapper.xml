@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.full.full.mapper.WebMapper">
+<!-- 
+  <insert id="joinUser" parameterType="com.full.full.model.UserDTO">
+  parameterType 속성으로 UserDTO 클래스를 매개변수로 받습니다 
+    INSERT INTO user (user_id, user_pwd, user_email, user_phone, user_address, user_name)
+    VALUES(#{user_id},#{user_pwd},#{user_email},#{user_phone},#{user_address},#{user_name})
+  </insert>
+  
+  <select id="LoginUser" parameterType="com.full.full.model.UserDTO" resultType="com.full.full.model.UserDTO">
+    SELECT * FROM user
+    WHERE user_id = #{user_id}
+    AND user_pwd = #{password}
+  </select>
+
+  <insert id="register" parameterType="com.full.full.model.ProductDTO">
+    INSERT INTO product (p_name, p_thumbnail, p_picurl, p_text, p_price, p_size)
+    VALUES(#{p_name},#{p_thumbnail},#{p_picurl},#{p_text},#{p_price},#{p_size})
+  </insert> -->
+
+  <select id="LoadMember" resultType="com.full.full.model.UserDTO">
+    SELECT id, name, phone, email, address fROM users
+  </select>
+
+</mapper>
