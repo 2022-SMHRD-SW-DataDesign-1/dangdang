@@ -1,14 +1,12 @@
 package com.full.full.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,9 +31,21 @@ public class WebController {
     // 회원가입
     @PostMapping("/")
     void singup(@RequestBody UserDTO user) {
+        int count = webMapper.checkUserId(user.getId());
+        if (count > 0) {
+            // 이미 존재하는 id라면 오류 처리를 할 수 있습니다.
+            throw new RuntimeException("이미 존재하는 아이디입니다.");
+        }
         webMapper.joinUser(user);
-        // webmapper 인터페이스를 구현한 객체의joinuser()메소드를 실행하여 회원가입 정보를 db에 저장
         System.out.println("유저 DB 저장 성공");
+    }
+
+    // 상품 업로드
+    @PostMapping("/Product")
+    void upload(@RequestBody ProductDTO product){
+        webMapper.Uploadproduct(product);
+        System.out.println("상품등록 성공");
+
     }
 
     // 마이페이지 고객정보
@@ -45,20 +55,23 @@ public class WebController {
         return webMapper.LoadMember();
     }
 
-    // 상품등록
-    // @PostMapping("/Product")
-    // public ResponseEntity<String> addProduct(@RequestBody ProductDTO product) {
-    //     webMapper.registerProduct(product);
-    //     System.out.println("상품 DB 저장 성공");
-    //     return new ResponseEntity<>("상품등록 성공", HttpStatus.CREATED);
-    // }
+    // 상품 페이지 리스트 불러오기
+    @GetMapping("/loadProduct")
+    private List<ProductDTO> LoadProduct() {
+        System.out.println("상품 리스트 불러오기");
+        return webMapper.LoadProduct();
+
+    }
 
     // 로그인
     @PostMapping("/login")
-    public String login(HttpServletRequest request) {
+    public String login(HttpServletRequest request,HttpServletResponse response ) {
         String id = request.getParameter("id");
         String password = request.getParameter("password");
-    
+
+        System.out.println("id:" +id);
+        System.out.println("password:" +password);
+
         UserDTO dto = new UserDTO();
         dto.setId(id);
         dto.setPassword(password);
@@ -78,29 +91,5 @@ public class WebController {
             return "failure";
         }
     }
-
-    // 상품정보 출력
-    // @GetMapping("/ProductDetail")
-    // private List<List<ProductDTO>> productList(){
-    //     System.out.println("상품페이지 불러오기");
-
-    //     List<List<ProductDTO>> resultList = new ArrayList<List<ProductDTO>>();
-    //     List<ProductDTO> dto = webMapper.productList();
-
-    //     String categoyArr[] = {"","","","",""};
-    //     for (String category : categoyArr ){
-    //         List<ProductDTO> tmpList = new ArrayList<ProductDTO>();
-    //         for(ProductDTO productDTO : dto){
-    //             if(productDTO.getCategory_num().contains(category)){
-    //                 tmpList.add(productDTO);
-    //             }
-    //         }
-    //         resultList.add(tmpList);
-    //     }
-
-
-    //     return resultList;
-    // }
-    
 
 }

@@ -19,6 +19,7 @@ const TestInfo = () => {
         e.preventDefault();
         // 회원가입에 필요한 정보를 객체로 생성
 
+
         const user = {
             id: id,
             password: password,
@@ -32,7 +33,6 @@ const TestInfo = () => {
             const response = await ApiService.joinUser(user);
             console.log(user);
             // user 데이터 넘어옴
-            // {id: '666', password: '666', email: '666@m', phone: '666', address: '666', …}
             console.log(response.data);
             console.log("회원가입 성공");
         } catch (error) {
@@ -40,13 +40,37 @@ const TestInfo = () => {
             console.log("회원가입 실패");
         }
     }
-   
+    const handleCheckId = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await ApiService.checkUserId(id, {
+                headers: {
+                    "Content-Type": "application/json",
+                }
+            });
+            console.log(response.data);
+            if (response.data === 'available') {
+                alert('사용 가능한 아이디입니다.');
+            } else {
+                alert('이미 사용중인 아이디입니다.');
+            }
+        } catch (error) {
+            console.error(error);
+            alert('아이디 중복체크에 실패했습니다.');
+        }
+    };
+
+
     return (
         <>
             <div>
                 <form onSubmit={handleSignup}>
                     <h3>회원가입</h3>
-                    <input type="text" onChange={(e) => SetId(e.target.value)} value={id} placeholder='아이디를 입력해주세요' /><br />
+                    <div className="id-check-container">
+                        <input type="text" onChange={(e) => SetId(e.target.value)} value={id} placeholder='아이디를 입력해주세요' /><br />
+                        <button onClick={handleCheckId}>중복체크</button><br />
+                    </div>
                     {/* 비밀번호 */}
                     <input type="password" onChange={(e) => SetPassword(e.target.value)} value={password} placeholder='비밀번호' /><br />
                     <input type="password" placeholder='비밀번호 확인' /><br />
@@ -61,17 +85,21 @@ const TestInfo = () => {
                 <br />
                 <Link to="/login" >
                     <button >로그인</button>
-                </Link >
+                </Link ><br />
+                <hr />
+                <Link to="/loadMember">
+                    <button >고객조회</button>
+                </Link>
+                <Link to="/loadproduct">
+                    <button >상품목록</button>
+                </Link><br />
+                <hr />
                 <Link to="/Product">
                     <button >상품등록</button>
                 </Link>
                 <Link to="/ProductDetail">
                     <button >장바구니</button>
                 </Link>
-                <Link to="/loadMember">
-                    <button >고객조회</button>
-                </Link>
-
 
 
             </div>
