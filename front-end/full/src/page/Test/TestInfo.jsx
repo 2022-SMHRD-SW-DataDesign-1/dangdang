@@ -27,10 +27,12 @@ const TestInfo = () => {
             address: address,
             name: name
         };
-         // APIservice.joinuser 함수를 호출할때 매개변수로 전달 
         // try-catch 구문을 사용 회원가인 성공/실패 여부 확인
         try {
             const response = await ApiService.joinUser(user);
+            console.log(user);
+            // user 데이터 넘어옴
+            // {id: '666', password: '666', email: '666@m', phone: '666', address: '666', …}
             console.log(response.data);
             console.log("회원가입 성공");
         } catch (error) {
@@ -60,7 +62,7 @@ const TestInfo = () => {
                 <Link to="/login" >
                     <button >로그인</button>
                 </Link >
-                <Link to="/cart">
+                <Link to="/Product">
                     <button >상품등록</button>
                 </Link>
                 <Link>

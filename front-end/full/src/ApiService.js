@@ -10,8 +10,8 @@ class ApiService {
   LoginUser(user){
     return axios.post(BASE_URL+"/login", user)
   }
-  register(product){
-    return axios.post(BASE_URL+"/cart", product)
+  register(product, categoryName) {
+    return axios.post(BASE_URL+"/Product", {...product, categoryName})
   }
   LoadMember(){
     return axios.get(BASE_URL+"/loadMember")

@@ -6,9 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,16 +37,31 @@ public class WebController {
         System.out.println("유저 DB 저장 성공");
     }
 
-    
+    // 마이페이지 고객정보
+    @GetMapping("/loadMember")
+    private List<UserDTO> LoadMember() {
+        System.out.println("유저리스트 불러오기");
+        return webMapper.LoadMember();
+    }
+
+    // 상품등록
+    @PostMapping("/Product")
+    public ResponseEntity<String> addProduct(@RequestBody ProductDTO product) {
+        webMapper.registerProduct(product);
+        System.out.println("상품 DB 저장 성공");
+        return new ResponseEntity<>("상품등록 성공", HttpStatus.CREATED);
+    }
+
     // 로그인
     @PostMapping("/login")
-    public String login(@PathVariable("user_id") String user_id, @PathVariable("user_pwd") String user_pwd, HttpServletRequest request) {
+    public String login(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        String password = request.getParameter("password");
 
-        System.out.println(user_pwd);
-        System.out.println(user_id);
-        
         UserDTO dto = new UserDTO();
-        
+
+        System.out.println(id);
+        System.out.println(password);
         String info = webMapper.LoginUser(dto);
         System.out.println("usermapper");
         if (info != null) {
@@ -60,19 +76,5 @@ public class WebController {
             return "/login";
         }
     }
-    
-    // 상품등록
-    @PostMapping("/cart")
-    void upload(@RequestBody ProductDTO product) {
-        webMapper.register(product);
-        System.out.println("상품등록 저장 성공");
-    }
-    
-    // 마이페이지 고객정보
-    @GetMapping("/loadMember")
-    private List<UserDTO> LoadMember(){
-        System.out.println("유저리스트 불러오기");
-        return webMapper.LoadMember();
-    }
-    
+
 }

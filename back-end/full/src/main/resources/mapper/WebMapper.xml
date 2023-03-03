@@ -10,19 +10,26 @@
     VALUES(#{id},#{password},#{email},#{phone},#{address},#{name})
   </insert>
   
+  <select id="LoadMember" resultType="com.full.full.model.UserDTO">
+    SELECT id, name, phone, email, address fROM users
+  </select>
+
   <select id="LoginUser" parameterType="com.full.full.model.UserDTO" resultType="com.full.full.model.UserDTO">
     SELECT * FROM users
     WHERE id = #{id}
     AND password = #{password}
   </select>
 
-  <insert id="register" parameterType="com.full.full.model.ProductDTO">
-    INSERT INTO products (name, price, desciption, image, category_num)
-    VALUES(#{name},#{price},#{desciption},#{image},#{category_num})
-  </insert>
 
-  <select id="LoadMember" resultType="com.full.full.model.UserDTO">
-    SELECT id, name, phone, email, address fROM users
-  </select>
+
+  <!-- 카테고리 코드를 짜야하나? -->
+
+  <insert id="register" parameterType="com.full.full.model.ProductDTO">
+    INSERT INTO products (name, price, description, image, category_num, quantity)
+    VALUES 
+    (#{name},#{price},#{description},#{image},
+    (SELECT category_num FROM category WHERE anmCtg = #{anmCtg} and kindCtg = #{kindCtg}), 
+    #{quantity}) 
+  </insert>
 
 </mapper>
