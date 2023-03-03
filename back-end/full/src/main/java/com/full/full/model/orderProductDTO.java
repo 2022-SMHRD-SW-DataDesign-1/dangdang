@@ -1,13 +1,12 @@
 package com.full.full.model;
 
-import java.sql.Timestamp;
 
 import lombok.Data;
 
 @Data
-public class CartDTO {
-    int cart_num;
+public class orderProductDTO {
+    int orderP_num;
     int product_num;
     int user_num;
-    Timestamp created_at;
+    int quantity;
 }

@@ -20,6 +20,6 @@ public interface WebMapper {
     public String LoginUser(UserDTO dto);
 
     // 상품등록
-    public void registerProduct(ProductDTO product);
+    // public void registerProduct(ProductDTO product);
 
 }

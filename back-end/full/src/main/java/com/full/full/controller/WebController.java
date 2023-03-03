@@ -1,5 +1,6 @@
 package com.full.full.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -45,21 +46,22 @@ public class WebController {
     }
 
     // 상품등록
-    @PostMapping("/Product")
-    public ResponseEntity<String> addProduct(@RequestBody ProductDTO product) {
-        webMapper.registerProduct(product);
-        System.out.println("상품 DB 저장 성공");
-        return new ResponseEntity<>("상품등록 성공", HttpStatus.CREATED);
-    }
+    // @PostMapping("/Product")
+    // public ResponseEntity<String> addProduct(@RequestBody ProductDTO product) {
+    //     webMapper.registerProduct(product);
+    //     System.out.println("상품 DB 저장 성공");
+    //     return new ResponseEntity<>("상품등록 성공", HttpStatus.CREATED);
+    // }
 
     // 로그인
     @PostMapping("/login")
     public String login(HttpServletRequest request) {
         String id = request.getParameter("id");
         String password = request.getParameter("password");
-
+    
         UserDTO dto = new UserDTO();
-
+        dto.setId(id);
+        dto.setPassword(password);
         System.out.println(id);
         System.out.println(password);
         String info = webMapper.LoginUser(dto);
@@ -68,13 +70,37 @@ public class WebController {
             System.out.println("로그인 객체 받아옴 ");
             HttpSession session = request.getSession();
             session.setAttribute("info", info);
-            return "/";
+            return "success"; // 로그인 성공시 success 반환
         } else {
             HttpSession session = request.getSession();
             System.out.println("로그인 객체 못받아옴");
             session.setAttribute("errMsg", "입력하신 정보가 올바르지 않습니다.");
-            return "/login";
+            return "failure";
         }
     }
+
+    // 상품정보 출력
+    // @GetMapping("/ProductDetail")
+    // private List<List<ProductDTO>> productList(){
+    //     System.out.println("상품페이지 불러오기");
+
+    //     List<List<ProductDTO>> resultList = new ArrayList<List<ProductDTO>>();
+    //     List<ProductDTO> dto = webMapper.productList();
+
+    //     String categoyArr[] = {"","","","",""};
+    //     for (String category : categoyArr ){
+    //         List<ProductDTO> tmpList = new ArrayList<ProductDTO>();
+    //         for(ProductDTO productDTO : dto){
+    //             if(productDTO.getCategory_num().contains(category)){
+    //                 tmpList.add(productDTO);
+    //             }
+    //         }
+    //         resultList.add(tmpList);
+    //     }
+
+
+    //     return resultList;
+    // }
+    
 
 }

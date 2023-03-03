@@ -23,11 +23,9 @@ const TestLogin = (props) => {
       id: state.id,
       password: state.password,
     };
-    ApiService.LoginUser(user.id, user.password)
+    ApiService.LoginUser({ id: user.id, password: user.password })
       .then((res) => {
         console.log(res.status);
-        // 넌 왜 200이니? => 성공을 말함
-        console.log("안뇽");
         console.log(res.data);
         if (res.data === 'success') {
           sessionStorage.setItem("info", JSON.stringify(user));

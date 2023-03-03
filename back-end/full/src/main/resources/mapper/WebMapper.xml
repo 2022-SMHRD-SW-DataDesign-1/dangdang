@@ -23,13 +23,13 @@
 
 
   <!-- 카테고리 코드를 짜야하나? -->
-
+<!-- 
   <insert id="register" parameterType="com.full.full.model.ProductDTO">
     INSERT INTO products (name, price, description, image, category_num, quantity)
     VALUES 
     (#{name},#{price},#{description},#{image},
     (SELECT category_num FROM category WHERE anmCtg = #{anmCtg} and kindCtg = #{kindCtg}), 
     #{quantity}) 
-  </insert>
+  </insert> -->
 
 </mapper>

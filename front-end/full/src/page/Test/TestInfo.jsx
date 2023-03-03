@@ -65,7 +65,7 @@ const TestInfo = () => {
                 <Link to="/Product">
                     <button >상품등록</button>
                 </Link>
-                <Link>
+                <Link to="/ProductDetail">
                     <button >장바구니</button>
                 </Link>
                 <Link to="/loadMember">

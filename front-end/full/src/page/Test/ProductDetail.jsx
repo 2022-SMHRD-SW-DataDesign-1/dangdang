@@ -4,7 +4,14 @@ import ApiService from "../../ApiService";
 
 const ProductDetail = () => {
     return (
-        <div>안녕</div>
+        <div>
+            <h1>상품 상세페이지</h1>
+
+            <div>
+                <button>장바구니</button>
+                <button>구매하기</button>
+            </div>
+        </div>
     )
 }
 export default ProductDetail;

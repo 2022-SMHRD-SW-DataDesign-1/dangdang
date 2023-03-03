@@ -10,4 +10,5 @@ public class OrdersDTO {
     int user_num;
     int total_price;
     Timestamp created_at;
+    String status;
 }
