@@ -9,9 +9,10 @@ class ApiService {
     return axios.post(BASE_URL, user);
   }
   // 아이디 중복체크
-  checkUserId(){
-    return axios.post(BASE_URL)
-  }
+  // checkUserId(){
+  //   return axios.post(BASE_URL)
+  // }
+
   // 로그인
   LoginUser(user){
     return axios.post(BASE_URL+"/login", user)
@@ -29,6 +30,10 @@ class ApiService {
     return axios.post(BASE_URL+"/Product", product)
   }
 
+  // 상품 상세 조회
+  getProduct(){
+    return axios.get(BASE_URL+"/ProductDetail")
+  }
 
 }
 

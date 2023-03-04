@@ -6,6 +6,12 @@ import ApiService from "../../ApiService";
 
 const ProductLoad = () => {
     const [Products, setProducts] = useState([]);
+    const menuArr = [
+        { name: '사료', content: '사료' },
+        { name: '간식', content: '간식' },
+        { name: '장난감', content: '장난감' },
+        { name: '미용', content: '미용' }
+    ]
 
 
     useEffect(() => {
@@ -18,6 +24,7 @@ const ProductLoad = () => {
                 console.log(res.data);
                 const products = res.data.map((product) => {
                     return {
+                        product_num :product.product_num,
                         name: product.name,
                         price: product.price,
                         description: product.description,
@@ -33,10 +40,20 @@ const ProductLoad = () => {
     };
     return (
         <div>
-            <h1>상품 목록페이지</h1>
-
-            <div>
-                <table border={"1"}>
+            <h1 style={{ backgroundColor: 'red' }}>상품 목록페이지</h1>
+            <div style={{ display: 'flex', marginleft: '300px', backgroundColor: 'yellow' }}>
+                {menuArr.map((kind, index) => {
+                    return (
+                        <>
+                            <button key={index}>
+                                {kind.name}
+                            </button>
+                        </>
+                    )
+                })}
+            </div>
+            <div style={{ backgroundColor: 'yellowgreen' }}>
+                <table border={"1"} >
                     <thead>
                         <tr>
                             <td>상품이름</td>
@@ -49,10 +66,10 @@ const ProductLoad = () => {
                     <tbody>
                         {Products.map((product) => (
                             <tr>
-                                <td><a href='/ProductDetail'>{product.name}</a></td>
+                                <td><a href={`/ProductDetail/${product.product_num}`}>{product.name}</a></td>
                                 <td>{product.price}</td>
                                 <td>{product.description}</td>
-                                <td><a href='/ProductDetail'>{product.image}</a></td>
+                                <td><a href={`/ProductDetail/${product.product_num}`}>{product.image}</a></td>
                                 <td>{product.category}</td>
                             </tr>
                         ))}

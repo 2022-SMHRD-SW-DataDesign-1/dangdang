@@ -9,15 +9,15 @@
     INSERT INTO users (id, password, email, phone, address, name)
     VALUES(#{id},#{password},#{email},#{phone},#{address},#{name})
   </insert>
+
+  <!-- <select id="checkUserId" parameterType="com.full.full.model.UserDTO">
+    SELECT COUNT(*) FROM users WHERE id=#{id}
+  </select> -->
   
   <insert id="Uploadproduct" parameterType="com.full.full.model.ProductDTO">
     INSERT INTO products (name, price, description,image, category,quantity)
     VALUES(#{name},#{price},#{description},#{image},#{category},#{quantity}) 
   </insert>
-
-  <select id="checkUserId" parameterType="com.full.full.model.UserDTO">
-    SELECT COUNT(*) FROM users WHERE id=#{id}
-  </select>
 
   <select id="LoadMember" resultType="com.full.full.model.UserDTO">
     SELECT id, name, phone, email, address fROM users
@@ -32,6 +32,12 @@
   <select id="LoadProduct" resultType="com.full.full.model.ProductDTO">
     SELECT name, price, description, image, category fROM  products
   </select>
+
+  <select id="getProduct" resultType="com.full.full.model.ProductDTO">
+    SELECT * FROM products WHERE product_num = #{product_num};
+  </select>
+
+
 
 
 </mapper>

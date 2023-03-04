@@ -31,7 +31,7 @@ const Product = () => {
             description: description,
             quantity: quantity,
             image: image,
-            category:`${anmCtg}${kindCtg}`
+            category:`${anmCtg},${kindCtg}`
         };
 
         try {

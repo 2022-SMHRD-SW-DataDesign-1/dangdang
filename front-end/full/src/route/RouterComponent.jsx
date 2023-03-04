@@ -6,6 +6,7 @@ import Product from '../page/Test/Product';
 import LoadMember from '../page/Test/LoadMember';
 import ProductDetail from '../page/Test/ProductDetail'
 import LoadProduct from '../page/Test/ProductLoad'
+import Test from '../page/Test/Test'
 
 const AppRouter = () => {
     return (
@@ -16,8 +17,10 @@ const AppRouter = () => {
                     <Route path="/login" element={<TestLogin/>} />
                     <Route path="/Product" element={<Product/>} />
                     <Route path='/loadMember' element={<LoadMember/>}/>
-                    <Route path='/ProductDetail' element={<ProductDetail/>}/>
+                    {/* <Route path='/ProductDetail' element={<ProductDetail/>}/> */}
                     <Route path='/loadProduct' element={<LoadProduct/>}/>
+                    <Route path='/Test' element={<Test/>}/>
+                    <Route path="/ProductDetail/:product_num" element={<ProductDetail/>} />
                 </Routes>
             </BrowserRouter>
         </div>

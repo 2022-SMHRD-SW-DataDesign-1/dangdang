@@ -14,11 +14,14 @@ public interface WebMapper {
     public void joinUser(UserDTO user);
 
     // 아이디 중복체크
-    public int checkUserId(String id);
+    // public int checkUserId(String id);
 
     // 회원 조회
     public List<UserDTO> LoadMember();
 
+    // 상품 상세 조회
+    public ProductDTO getProduct(int product_num);     
+    
     // 상품 리스트
     public List<ProductDTO> LoadProduct();
 
@@ -27,6 +30,5 @@ public interface WebMapper {
 
     // 상품 업로드
     public void Uploadproduct(ProductDTO product);
-
 
 }

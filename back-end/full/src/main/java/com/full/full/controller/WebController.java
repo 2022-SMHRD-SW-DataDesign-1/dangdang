@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,11 +32,11 @@ public class WebController {
     // 회원가입
     @PostMapping("/")
     void singup(@RequestBody UserDTO user) {
-        int count = webMapper.checkUserId(user.getId());
-        if (count > 0) {
-            // 이미 존재하는 id라면 오류 처리를 할 수 있습니다.
-            throw new RuntimeException("이미 존재하는 아이디입니다.");
-        }
+        // int count = webMapper.checkUserId(user.getId());
+        // if (count > 0) {
+        //     // 이미 존재하는 id라면 오류 처리를 할 수 있습니다.
+        //     throw new RuntimeException("이미 존재하는 아이디입니다.");
+        // }
         webMapper.joinUser(user);
         System.out.println("유저 DB 저장 성공");
     }
@@ -62,6 +63,15 @@ public class WebController {
         return webMapper.LoadProduct();
 
     }
+
+    // 상품 상세 조회(1개)
+    @GetMapping("/ProductDetail/{product_num}")
+    private ProductDTO getProduct(@PathVariable int product_num) {
+        System.out.println("상품 상세 조회 ");
+        return webMapper.getProduct(product_num);
+    }
+    
+    
 
     // 로그인
     @PostMapping("/login")
