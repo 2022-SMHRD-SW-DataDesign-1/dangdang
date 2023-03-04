@@ -21,23 +21,26 @@ const Product = () => {
         setKindCategory(e.target.value);
       };
 
-
     const handleRegister = async (e) => {
         e.preventDefault();
-
+    
+        if (!name || !price || !description || !quantity || !image || !anmCtg || !kindCtg) {
+            alert("모든 항목을 입력해주세요.");
+            return;
+        }
+    
         const product = {
             name: name,
             price: price,
             description: description,
             quantity: quantity,
             image: image,
-            category:`${anmCtg},${kindCtg}`
+            category: `${anmCtg},${kindCtg}`
         };
-
+    
         try {
             const response = await ApiService.Uploadproduct(product);
             console.log(product);
-            // user 데이터 넘어옴
             console.log(response.data);
             console.log("상품등록 성공");
         } catch (error) {
@@ -62,12 +65,22 @@ const Product = () => {
                     <input type="file" onChange={(e) => setImage(e.target.value)} value={image} placeholder='상품사진' /><br />
                     <textarea name="file" onChange={(e) => setDescription(e.target.value)} value={description} id="file" cols="30" rows="10" placeholder='상품설명'></textarea><br />
 
-                    <select name="anmCtg" id="animal" onChange={handleAnimalCategoryChange} value={anmCtg}>
+                    <select
+                        name="anmCtg"
+                        id="animal"
+                        onChange={handleAnimalCategoryChange}
+                        value={anmCtg}
+                    >
                         <option value="">동물 종류 선택</option>
                         <option value="강아지">강아지</option>
                         <option value="고양이">고양이</option>
                     </select>
-                    <select name="kindCtg" id="kind" onChange={handleKindCategoryChange} value={kindCtg}>
+                    <select
+                        name="kindCtg"
+                        id="kind"
+                        onChange={handleKindCategoryChange}
+                        value={kindCtg}
+                    >
                         <option value="">상품 선택</option>
                         <option value="사료">사료</option>
                         <option value="간식">간식</option>
@@ -75,7 +88,7 @@ const Product = () => {
                         <option value="미용">미용</option>
                     </select>
                     <br />
-                    <input type="submit"/>
+                    <input type="submit" />
                 </form>
             </div>
         </>

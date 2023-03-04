@@ -3,7 +3,6 @@ package com.full.full.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,18 +31,31 @@ public class WebController {
     // 회원가입
     @PostMapping("/")
     void singup(@RequestBody UserDTO user) {
-        // int count = webMapper.checkUserId(user.getId());
-        // if (count > 0) {
-        //     // 이미 존재하는 id라면 오류 처리를 할 수 있습니다.
-        //     throw new RuntimeException("이미 존재하는 아이디입니다.");
-        // }
         webMapper.joinUser(user);
         System.out.println("유저 DB 저장 성공");
     }
 
+    // 아이디 중복체크 조회
+    @GetMapping("/{id}")
+    public UserDTO checkUserId(@PathVariable String id) {
+        System.out.println("아이디 중복 확인");
+        return webMapper.checkUserId(id);
+    }
+
+    // 로그인
+    @PostMapping("/login")
+    public UserDTO loginUser(@RequestBody UserDTO user, HttpServletRequest request) {
+        UserDTO loginUser = webMapper.loginUser(user);
+        if (loginUser != null) {
+            HttpSession session = request.getSession();
+            session.setAttribute("loginUser", loginUser);
+        }
+        return loginUser;
+    }
+
     // 상품 업로드
     @PostMapping("/Product")
-    void upload(@RequestBody ProductDTO product){
+    void upload(@RequestBody ProductDTO product) {
         webMapper.Uploadproduct(product);
         System.out.println("상품등록 성공");
 
@@ -69,37 +81,6 @@ public class WebController {
     public ProductDTO getProduct(@PathVariable int product_num) {
         System.out.println("상품 상세 조회 ");
         return webMapper.getProduct(product_num);
-    }
-    
-    
-
-    // 로그인
-    @PostMapping("/login")
-    public String login(HttpServletRequest request,HttpServletResponse response ) {
-        String id = request.getParameter("id");
-        String password = request.getParameter("password");
-
-        System.out.println("id:" +id);
-        System.out.println("password:" +password);
-
-        UserDTO dto = new UserDTO();
-        dto.setId(id);
-        dto.setPassword(password);
-        System.out.println(id);
-        System.out.println(password);
-        String info = webMapper.LoginUser(dto);
-        System.out.println("usermapper");
-        if (info != null) {
-            System.out.println("로그인 객체 받아옴 ");
-            HttpSession session = request.getSession();
-            session.setAttribute("info", info);
-            return "success"; // 로그인 성공시 success 반환
-        } else {
-            HttpSession session = request.getSession();
-            System.out.println("로그인 객체 못받아옴");
-            session.setAttribute("errMsg", "입력하신 정보가 올바르지 않습니다.");
-            return "failure";
-        }
     }
 
 }

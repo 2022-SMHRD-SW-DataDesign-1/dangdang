@@ -5,14 +5,18 @@
 <mapper namespace="com.full.full.mapper.WebMapper">
 
   <insert id="joinUser" parameterType="com.full.full.model.UserDTO">
-  <!-- parameterType 속성으로 UserDTO 클래스를 매개변수로 받습니다  -->
     INSERT INTO users (id, password, email, phone, address, name)
     VALUES(#{id},#{password},#{email},#{phone},#{address},#{name})
   </insert>
 
-  <!-- <select id="checkUserId" parameterType="com.full.full.model.UserDTO">
-    SELECT COUNT(*) FROM users WHERE id=#{id}
-  </select> -->
+  <select id="checkUserId" resultType="com.full.full.model.UserDTO">
+    SELECT * FROM users WHERE id = #{id}
+  </select>
+
+  <select id="loginUser" parameterType="com.full.full.model.UserDTO" resultType="com.full.full.model.UserDTO">
+    SELECT * FROM users WHERE id = #{id} AND password = #{password}
+  </select>
+
   
   <insert id="Uploadproduct" parameterType="com.full.full.model.ProductDTO">
     INSERT INTO products (name, price, description,image, category,quantity)
@@ -23,11 +27,7 @@
     SELECT user_num, id, name, phone, email, address fROM users
   </select>
 
-  <select id="LoginUser" parameterType="com.full.full.model.UserDTO" resultType="com.full.full.model.UserDTO">
-    SELECT * FROM users
-    WHERE id = #{id}
-    AND password = #{password}
-  </select>
+
 
   <select id="LoadProduct" resultType="com.full.full.model.ProductDTO">
     SELECT product_num, name, price, description, image, category fROM  products

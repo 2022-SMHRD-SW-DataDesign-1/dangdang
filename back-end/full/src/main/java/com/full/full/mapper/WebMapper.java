@@ -15,21 +15,24 @@ public interface WebMapper {
     public void joinUser(UserDTO user);
 
     // 아이디 중복체크
-    // public int checkUserId(String id);
+    public UserDTO checkUserId(String id);
+
+    // 로그인
+    public UserDTO loginUser(UserDTO user);
 
     // 회원 조회
     public List<UserDTO> LoadMember();
 
     // 상품 상세 조회
     public ProductDTO getProduct(@Param("product_num") int product_num);
-    
+
     // 상품 리스트
     public List<ProductDTO> LoadProduct();
 
-    // 로그인
-    public String LoginUser(UserDTO dto);
-
     // 상품 업로드
     public void Uploadproduct(ProductDTO product);
+
+
+
 
 }
