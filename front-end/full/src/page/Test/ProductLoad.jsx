@@ -24,7 +24,7 @@ const ProductLoad = () => {
                 console.log(res.data);
                 const products = res.data.map((product) => {
                     return {
-                        product_num :product.product_num,
+                        product_num: product.product_num,
                         name: product.name,
                         price: product.price,
                         description: product.description,
@@ -65,11 +65,12 @@ const ProductLoad = () => {
                     </thead>
                     <tbody>
                         {Products.map((product) => (
-                            <tr>
+                            <tr key={product.product_num}>
                                 <td><a href={`/ProductDetail/${product.product_num}`}>{product.name}</a></td>
+                                <td>{product.product_num}</td>
                                 <td>{product.price}</td>
                                 <td>{product.description}</td>
-                                <td><a href={`/ProductDetail/${product.product_num}`}>{product.image}</a></td>
+                                <td>{product.image}</td>
                                 <td>{product.category}</td>
                             </tr>
                         ))}

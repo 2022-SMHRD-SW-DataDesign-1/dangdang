@@ -3,6 +3,7 @@ package com.full.full.mapper;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.full.full.model.ProductDTO;
 import com.full.full.model.UserDTO;
@@ -20,7 +21,7 @@ public interface WebMapper {
     public List<UserDTO> LoadMember();
 
     // 상품 상세 조회
-    public ProductDTO getProduct(int product_num);     
+    public ProductDTO getProduct(@Param("product_num") int product_num);
     
     // 상품 리스트
     public List<ProductDTO> LoadProduct();

@@ -31,8 +31,8 @@ class ApiService {
   }
 
   // 상품 상세 조회
-  getProduct(){
-    return axios.get(BASE_URL+"/ProductDetail")
+  getProduct(product_num) {
+    return axios.get(BASE_URL + "/ProductDetail/" + product_num);
   }
 
 }
