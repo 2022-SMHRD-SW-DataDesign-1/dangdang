@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ApiService from "../../ApiService";
 import { Link } from 'react-router-dom';
 
@@ -15,7 +15,16 @@ const TestInfo = () => {
     const [phone, SetPhone] = useState("")
     const [address, SetAddress] = useState("")
 
-    const [IdCheck, SetIdCheck] =useState(false)
+    const [IdCheck, SetIdCheck] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    // 로그인 여부 확인
+    useEffect(() => {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      if (isLoggedIn === 'true') {
+        setIsLoggedIn(true);
+      }
+    }, []);
 
     // 아이디 중복체크
     const handleIdcheck = async (e) => {
@@ -44,7 +53,7 @@ const TestInfo = () => {
         // 이벤트 객체(e)를 매개변수로 받아서 이벤트의 기본 동작을 막고 
         e.preventDefault();
         // 회원가입에 필요한 정보를 객체로 생성
-        if(!IdCheck){
+        if (!IdCheck) {
             alert("아이디 중복을 확인해주세요");
             return;
         }
@@ -69,9 +78,12 @@ const TestInfo = () => {
         }
     }
 
+    const logout = () => {
+        console.log('로그아웃클릭')
+        sessionStorage.clear();
+        window.location.replace("/")
 
-
-
+    }
     return (
         <>
             <div>
@@ -96,15 +108,25 @@ const TestInfo = () => {
                     <input type="submit" name='signup' />
                 </form>
                 <br />
-                <Link to="/login" >
-                    <button >로그인</button>
-                </Link ><br />
+                <div>
+                    {
+                        isLoggedIn ? (
+                            <button onClick={logout}>로그아웃</button>
+                        ) : (
+                            <Link to="/login">
+                                <button>로그인</button>
+                            </Link>
+                        )
+                    }
+                </div>
                 <hr />
                 <Link to="/loadMember">
                     <button >고객조회</button>
                 </Link>
                 <Link to="/loadproduct">
                     <button >상품목록</button>
+                    <button name='dog'>강아지</button>
+                    <button name='cat'>고양이</button>
                 </Link><br />
                 <hr />
                 <Link to="/Product">

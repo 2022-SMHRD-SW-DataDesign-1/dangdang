@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 
-import styled from 'styled-components';
-
-
 const ProductList = () => {
 
   const [content, setContent] = useState();

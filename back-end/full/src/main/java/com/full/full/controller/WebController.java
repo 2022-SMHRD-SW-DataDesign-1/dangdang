@@ -44,13 +44,19 @@ public class WebController {
 
     // 로그인
     @PostMapping("/login")
-    public UserDTO loginUser(@RequestBody UserDTO user, HttpServletRequest request) {
+    public String loginUser(@RequestBody UserDTO user, HttpServletRequest request) {
         UserDTO loginUser = webMapper.loginUser(user);
         if (loginUser != null) {
             HttpSession session = request.getSession();
             session.setAttribute("loginUser", loginUser);
+            return "success"; // 로그인 성공시 success 반환
+
+        } else {
+            HttpSession session = request.getSession();
+            System.out.println("로그인 객체 못받아옴");
+            session.setAttribute("errMsg", "입력하신 정보가 올바르지 않습니다.");
+            return "failure";
         }
-        return loginUser;
     }
 
     // 상품 업로드

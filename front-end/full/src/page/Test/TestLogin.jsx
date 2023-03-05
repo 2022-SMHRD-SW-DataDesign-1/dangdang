@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
-
 import ApiService from "../../ApiService";
 
 const TestLogin = (props) => {
@@ -9,6 +8,8 @@ const TestLogin = (props) => {
     password: ''
   });
 
+  const [loggedIn, setLoggedIn] = useState(false);
+
   const onChange = (e) => {
     setState({
       ...state,
@@ -16,6 +17,7 @@ const TestLogin = (props) => {
     });
   };
   const navigate = useNavigate();
+
   const LoginUser = (e) => {
     e.preventDefault();
     const user = {
@@ -27,7 +29,9 @@ const TestLogin = (props) => {
         console.log(res.status);
         console.log(res.data);
         if (res.data === 'success') {
-          sessionStorage.setItem("info", JSON.stringify(user));
+          // sessionStorage.setItem("info", JSON.stringify(user));
+          sessionStorage.setItem("info", res.data);
+          setLoggedIn(true);
           navigate("/");
         } else {
           alert('아이디 또는 비밀번호가 올바르지 않습니다.');
@@ -42,6 +46,13 @@ const TestLogin = (props) => {
       });
   };
 
+  const logout = () => {
+    console.log('로그아웃클릭')
+    sessionStorage.clear();
+    setLoggedIn(false);
+    window.location.replace("/")
+  }
+
   return (
     <div>
       {/* 로그인 */}
@@ -50,10 +61,10 @@ const TestLogin = (props) => {
         <input type="text" onChange={onChange} name="id" value={state.id} placeholder='ID' /><br />
         <input type="password" onChange={onChange} name="password" value={state.password} placeholder='PW' /><br />
         <button onClick={LoginUser} name='login'>로그인</button>
+        {loggedIn && <button onClick={logout} name='logout'>로그아웃</button>}
       </form>
     </div>
   );
 };
 
-
-export default TestLogin
+export default TestLogin;
