@@ -7,6 +7,11 @@ import LoadMember from '../page/Test/LoadMember';
 import ProductDetail from '../page/Test/ProductDetail'
 import LoadProduct from '../page/Test/ProductLoad'
 import Test from '../page/Test/Test'
+import Main from '../page/mainpage/Main'
+import Join from '../page/joinpage/Join'
+import Login from '../page/loginpage/Login'
+import ProductList2 from '../page/productList/ProductList2'
+import ProductUpdate from '../page/productUpdate/ProductUpdate'
 
 const AppRouter = () => {
     return (
@@ -21,6 +26,11 @@ const AppRouter = () => {
                     <Route path='/loadProduct' element={<LoadProduct/>}/>
                     <Route path='/Test' element={<Test/>}/>
                     <Route path="/ProductDetail/:product_num" element={<ProductDetail/>} />
+                    <Route path="/Main" element={<Main/>} />
+                    <Route path="/Join" element={<Join/>} />
+                    <Route path="/Loginminji" element={<Login/>} />
+                    <Route path="/ProductList2" element={<ProductList2/>} />
+                    <Route path="/ProductUpdate" element={<ProductUpdate/>} />
                 </Routes>
             </BrowserRouter>
         </div>

@@ -1,0 +1,37 @@
+.box{
+    background-color: crimson;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    width: 20rem; 
+    height: 50rem;
+    margin: auto;
+    
+}
+input{
+    width: 15rem;  
+    height: 2rem; 
+    border-radius: 10px;
+    border-color:azure;
+    border:none;
+    margin-left: -2.3rem;
+}
+button{
+    font-family: "BMJUA_ttf";
+    width:5rem;
+    height:2rem;
+    font-size: 1rem;
+    border-color:beige;
+    color: #3B6EAE;
+    background-color:azure;
+    border-radius: 10px;
+    border:none;
+    margin-right: 1rem;
+}
+
+label{
+    font-size: 1.1rem;
+    margin-top: 0.3rem;    
+}
+    
+
