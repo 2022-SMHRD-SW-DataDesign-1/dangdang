@@ -1,7 +1,7 @@
 button{
     margin-left: 2rem;
     font-family: "BMJUA_ttf";
-    width:7.3rem;
+    width:5rem;
     height:2rem;
     font-size: 1rem;
     border-color:beige;
@@ -23,10 +23,10 @@ button{
     font-family: BMJUA_ttf;
     font-size: 1rem;
 }
-h3{
+.productname{
     text-align: left;
     
-}
+} 
 h4{
     text-align: right;
     display: inline-block;

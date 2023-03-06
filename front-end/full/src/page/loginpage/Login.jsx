@@ -9,11 +9,11 @@ const Login = () => {
     <div style={{ backgroundColor: "#FDFDF6", display: "flex", flexDirection: "column", fontFamily: "BMJUA_ttf" }}>
       <Header />
       <div >
-        <form className="box"
+        <form className="box1"
           style={{
             display: "flex",
             flexDirection: "column",
-            height: "30rem",
+            height: "28rem",
             width: "25rem",
             marginTop: "10rem",
             marginBottom: "10rem",
@@ -23,16 +23,17 @@ const Login = () => {
             color:"#3B6EAE"
           }}>
           <h1 style={{ 
-            marginTop: "-5rem", 
+            marginTop: "-1rem", 
             marginBottom: "4rem", 
             fontFamily: "BMJUA_ttf", 
-            fontWeight:"lighter"
+            fontWeight:"lighter",
+            textAlign:"center"
             }}> 로그인 </h1>
           <label> ID </label>
-          <input type='text' />
+          <input className='put' type='text' />
 
           <label>Password</label>
-          <input type='password' />
+          <input className='put' type='password' />
 
           <span>
             <br />

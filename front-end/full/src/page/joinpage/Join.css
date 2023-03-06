@@ -1,24 +1,25 @@
-.box{
+.box2{
     background-color: crimson;
     display: flex; 
     justify-content: center; 
-    align-items: center;
     width: 20rem; 
     height: 50rem;
-    margin: auto;
     
+    margin: auto;
 }
 input{
-    width: 15rem;  
+    width: 17rem;  
     height: 2rem; 
     border-radius: 10px;
     border-color:azure;
     border:none;
-    margin-left: -2.3rem;
+    margin-right: 6.5rem;
+    
+    
 }
 button{
     font-family: "BMJUA_ttf";
-    width:5rem;
+    width: 5rem;
     height:2rem;
     font-size: 1rem;
     border-color:beige;
@@ -27,11 +28,15 @@ button{
     border-radius: 10px;
     border:none;
     margin-right: 1rem;
+    margin-top: -2rem;
+  
 }
 
-label{
+.label{
     font-size: 1.1rem;
-    margin-top: 0.3rem;    
+    margin-top: 0.3rem;
+    margin-left: 2rem;
+    
 }
     
 

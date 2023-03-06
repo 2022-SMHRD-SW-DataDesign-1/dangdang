@@ -48,15 +48,15 @@ const Header = () => {
                     fontSize: "20px",
                     float: "right"
                 }}>
-                    <li style={{ marginLeft: "30px" }}>
+                    <a href='http://localhost:3002/Loginminji' style={{ color:"#3B6EAE", marginLeft: "30px",textDecoration: "none" }}>
                         로그인
-                    </li>
-                    <li style={{ marginLeft: "30px" }}>
+                    </a>
+                    <a href='http://localhost:3002/Join' style={{ color:"#3B6EAE", marginLeft: "30px",textDecoration: "none" }}>
                         회원가입
-                    </li>
-                    <li style={{ marginLeft: "30px", marginRight: "20px" }}>
+                    </a>
+                    <a style={{ marginLeft: "30px", marginRight: "20px" }}>
                         주문조회
-                    </li>
+                    </a>
                 </ul>
             </nav>
         </header>

@@ -17,7 +17,7 @@ const ProductList2 = () => {
                 <div>
                 <img style={{ width: "30rem", height: "30rem" }}
                     src={require("../Img/product1.jpg")} alt="사료" />
-                <h3> 댕냥이 사료 1kg</h3>
+                <h3 className='productname'> 댕냥이 사료 1kg</h3>
                 <h4> 30,000원</h4>
                 </div>
                 <div>

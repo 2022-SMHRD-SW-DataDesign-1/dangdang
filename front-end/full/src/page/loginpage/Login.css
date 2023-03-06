@@ -1,25 +1,26 @@
-.box{
+.box1{
     background-color: crimson;
     display: flex; 
     justify-content: center; 
     align-items: center;
     width: 20rem; 
-    height: 50rem;
+    height: 30rem;
     margin: auto;
     
 }
-input{
-    width: 15rem;  
+.put{
+    width: 17rem;  
     height: 2rem; 
     border-radius: 10px;
     border-color:azure;
     border:none;
- 
+    margin-left: 6rem;
+    
     
 }
 button{
     font-family: "BMJUA_ttf";
-    width:7.3rem;
+    width: 5rem;
     height:2rem;
     font-size: 1rem;
     border-color:beige;
@@ -32,5 +33,5 @@ button{
 label{
     font-size: 1rem;
     margin-top: 0.5rem;
-    
+  
 }

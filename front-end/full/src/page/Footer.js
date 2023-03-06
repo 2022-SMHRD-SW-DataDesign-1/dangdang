@@ -12,7 +12,7 @@ const Footer = () => {
             width:"100vw",
             fontWeight:"lighter",
             color:"#3B6EAE",
-            
+            alignItems: "center"
             }}>
             <h3>댕냥이 쇼핑몰에 오신 것을 환영합니다. </h3>
         </div>
