@@ -49,11 +49,12 @@ public class WebController {
         if (loginUser != null) {
             HttpSession session = request.getSession();
             session.setAttribute("loginUser", loginUser);
+            System.out.println("login success");
             return "success"; // 로그인 성공시 success 반환
 
         } else {
             HttpSession session = request.getSession();
-            System.out.println("로그인 객체 못받아옴");
+            System.out.println("login fail");
             session.setAttribute("errMsg", "입력하신 정보가 올바르지 않습니다.");
             return "failure";
         }
@@ -62,8 +63,11 @@ public class WebController {
     // 상품 업로드
     @PostMapping("/Product")
     void upload(@RequestBody ProductDTO product) {
+
+        
+
         webMapper.Uploadproduct(product);
-        System.out.println("상품등록 성공");
+        System.out.println("product update success");
 
     }
 

@@ -30,8 +30,9 @@ const TestLogin = (props) => {
         console.log(res.data);
         if (res.data === 'success') {
           // sessionStorage.setItem("info", JSON.stringify(user));
-          sessionStorage.setItem("info", res.data);
+          sessionStorage.setItem("login", res.data);
           setLoggedIn(true);
+          console.log(loggedIn);
           navigate("/");
         } else {
           alert('아이디 또는 비밀번호가 올바르지 않습니다.');
@@ -48,9 +49,12 @@ const TestLogin = (props) => {
 
   const logout = () => {
     console.log('로그아웃클릭')
-    sessionStorage.clear();
+    sessionStorage.setItem("login", false);
     setLoggedIn(false);
-    window.location.replace("/")
+    sessionStorage.clear();
+    console.log("로그아웃 확인");
+    console.log(loggedIn);
+    // window.location.replace("/")
   }
 
   return (
