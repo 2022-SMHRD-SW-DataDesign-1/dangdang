@@ -4,6 +4,16 @@ import '../page/font/font.css'
 
 
 const Header = () => {
+
+    // 로그인 객체 담아와야함
+    
+
+
+
+
+
+
+
     return (
         <header style={{
             display: "flex",
@@ -17,6 +27,7 @@ const Header = () => {
             textAlign: "center",
             color: "#3B6EAE"
         }}>
+            
             <h1 style={{ marginLeft: "2%" }}>댕냥이</h1>
             <nav>
                 <ul style={{
@@ -48,10 +59,10 @@ const Header = () => {
                     fontSize: "20px",
                     float: "right"
                 }}>
-                    <a href='http://localhost:3002/Loginminji' style={{ color:"#3B6EAE", marginLeft: "30px",textDecoration: "none" }}>
+                    <a href='/loginminji' style={{ color:"#3B6EAE", marginLeft: "30px",textDecoration: "none" }}>
                         로그인
                     </a>
-                    <a href='http://localhost:3002/Join' style={{ color:"#3B6EAE", marginLeft: "30px",textDecoration: "none" }}>
+                    <a href='/Join' style={{ color:"#3B6EAE", marginLeft: "30px",textDecoration: "none" }}>
                         회원가입
                     </a>
                     <a style={{ marginLeft: "30px", marginRight: "20px" }}>

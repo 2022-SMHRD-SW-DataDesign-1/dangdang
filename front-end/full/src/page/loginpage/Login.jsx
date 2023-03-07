@@ -6,6 +6,7 @@ import Footer from '../Footer'
 import '../loginpage/Login.css'
 import '../font/font.css'
 
+
 const Login = () => {
   const [state, setState] = useState({
     id: '',
@@ -20,6 +21,7 @@ const Login = () => {
       [e.target.name]: e.target.value,
     });
   };
+
   const navigate = useNavigate();
 
   const LoginUser = (e) => {
@@ -34,10 +36,11 @@ const Login = () => {
         console.log(res.data);
         if (res.data === 'success') {
           // sessionStorage.setItem("info", JSON.stringify(user));
-          sessionStorage.setItem("login", res.data);
+          window.sessionStorage.setItem("login", res.data);
           setLoggedIn(true);
           console.log(loggedIn);
-          navigate("/");
+          // false??
+          navigate("/loginminji");
         } else {
           alert('아이디 또는 비밀번호가 올바르지 않습니다.');
           setState({
@@ -58,6 +61,7 @@ const Login = () => {
     sessionStorage.clear();
     console.log("로그아웃 확인");
     console.log(loggedIn);
+    // true?
     // window.location.replace("/")
   }
 

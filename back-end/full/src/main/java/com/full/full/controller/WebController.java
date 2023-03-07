@@ -74,14 +74,14 @@ public class WebController {
     // 마이페이지 고객정보
     @GetMapping("/loadMember")
     public List<UserDTO> LoadMember() {
-        System.out.println("유저리스트 불러오기");
+        System.out.println("user list load");
         return webMapper.LoadMember();
     }
 
     // 상품 페이지 리스트 불러오기
     @GetMapping("/loadProduct")
     public List<ProductDTO> LoadProduct() {
-        System.out.println("상품 리스트 불러오기");
+        System.out.println("product list load");
         return webMapper.LoadProduct();
 
     }
@@ -89,7 +89,7 @@ public class WebController {
     // 상품 상세 조회(1개)
     @GetMapping("/ProductDetail/{product_num}")
     public ProductDTO getProduct(@PathVariable int product_num) {
-        System.out.println("상품 상세 조회 ");
+        System.out.println("product detail");
         return webMapper.getProduct(product_num);
     }
 
