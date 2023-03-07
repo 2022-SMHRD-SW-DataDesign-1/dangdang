@@ -1,0 +1,58 @@
+.detailArea {
+    width: 1080px;
+    height: 1000px;
+    margin: 0 auto;
+}
+.thumbnail {
+    float: left;
+    width: 500px;
+    text-align: center;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.infoArea{
+    position: relative;
+    float: left;
+    width: 500px;
+    margin-left: 80px;
+}
+.prdDetail_table li {
+    margin-bottom: 10px;
+    display: flex;
+}
+.prd_name{
+    font-size: 40px;
+    color:rgb(58, 58, 58);
+    font-weight: bold;
+    font-weight: lighter;
+    margin-top: 3rem;
+}
+.prd_price{
+    font-size: 35px;
+    color: #3B6EAE;
+    margin-left: 20rem;
+    margin-top: 1.5rem;
+}
+.prd_des{
+    font-size: 25px;
+    color: #555555;
+    margin-top: 1rem;
+}
+.buy{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 14rem;   
+}
+.btn2{
+    font-size: 30px;
+    width: 10rem;
+    height: 4rem;
+}

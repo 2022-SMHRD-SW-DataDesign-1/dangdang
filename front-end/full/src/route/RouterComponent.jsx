@@ -4,7 +4,7 @@ import TestJoin from "../page/Test/TestInfo"
 // import TestLogin from '../page/Test/TestLogin';
 import Product from '../page/Test/Product';
 import LoadMember from '../page/Test/LoadMember';
-import ProductDetail from '../page/Test/ProductDetail'
+import ProductDetail from '../page/productDetail/ProductDetail'
 import LoadProduct from '../page/Test/ProductLoad'
 // import Test from '../page/Test/Test'
 import Main from '../page/mainpage/Main'
