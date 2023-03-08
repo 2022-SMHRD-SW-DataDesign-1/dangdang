@@ -7,7 +7,7 @@ import '../loginpage/Login.css'
 import '../font/font.css'
 
 
-const Login = () => {
+const Login = (props) => {
   const [state, setState] = useState({
     id: '',
     password: ''
@@ -33,6 +33,7 @@ const Login = () => {
       .then((res) => {
         console.log(res.status);
         console.log(res.data);
+        console.log("if 통과");
         if (res.data === 'success') {
           // sessionStorage.setItem("info", JSON.stringify(user));
           window.sessionStorage.setItem("loginUser", res.data);
