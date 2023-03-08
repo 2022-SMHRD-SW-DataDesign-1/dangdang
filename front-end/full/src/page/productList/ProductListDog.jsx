@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import ApiService from "../../ApiService";
 import Footer from '../Footer'
 import Header from '../Header'
-import './ProductList2.css'
+import './ProductListDog.css'
 
-const ProductList2 = () => {
+const ProductListDog = () => {
 
     const [Products, setProducts] = useState([]);
     const menuArr = [
@@ -28,6 +28,7 @@ const ProductList2 = () => {
                         name: product.name,
                         price: product.price,
                         image: product.image,
+                        category : product.category
                     };
                 });
                 setProducts(products);
@@ -81,4 +82,4 @@ const ProductList2 = () => {
     )
 }
 
-export default ProductList2
+export default ProductListDog

@@ -1,0 +1,42 @@
+button {
+    margin-left: 2rem;
+    font-family: "BMJUA_ttf";
+    width: 5rem;
+    height: 2rem;
+    font-size: 1rem;
+    border-color: beige;
+    color: #3B6EAE;
+    background-color: azure;
+    border-radius: 10px;
+    /* border:none; */
+    cursor: pointer;
+}
+
+.pn {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin-top: 3rem;
+    width: 100%;
+    text-align: center;
+    overflow: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: BMJUA_ttf;
+    font-size: 1rem;
+    
+
+}
+.product-item{
+    padding: 20px;
+}
+.productname {
+    text-align: left;
+
+}
+
+h4 {
+    text-align: right;
+    display: inline-block;
+}

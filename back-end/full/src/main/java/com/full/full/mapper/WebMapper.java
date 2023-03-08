@@ -26,13 +26,13 @@ public interface WebMapper {
     // 상품 상세 조회
     public ProductDTO getProduct(@Param("product_num") int product_num);
 
-    // 상품 리스트
+    // 상품 리스트 멍멍이
     public List<ProductDTO> LoadProduct();
+
+    // 상품 리스트 고양이
+    public List<ProductDTO> LoadProductCat();
 
     // 상품 업로드
     public void Uploadproduct(ProductDTO product);
-
-
-
 
 }

@@ -28,7 +28,7 @@ const Header = () => {
             </nav>
             <nav>
                 <ul className='ul2'>
-                    <a href='/loginminji'>
+                    <a href='/Login'>
                         로그인
                     </a>
                     <a href='/Join'>

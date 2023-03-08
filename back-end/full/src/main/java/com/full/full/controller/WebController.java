@@ -29,7 +29,7 @@ public class WebController {
     WebMapper webMapper;
 
     // 회원가입
-    @PostMapping("/")
+    @PostMapping("/Join")
     void singup(@RequestBody UserDTO user) {
         webMapper.joinUser(user);
         System.out.println("유저 DB 저장 성공");
@@ -43,7 +43,7 @@ public class WebController {
     }
 
     // 로그인
-    @PostMapping("/login")
+    @PostMapping("/Login")
     public String loginUser(@RequestBody UserDTO user, HttpServletRequest request) {
         UserDTO loginUser = webMapper.loginUser(user);
         if (loginUser != null) {
@@ -61,7 +61,7 @@ public class WebController {
     }
 
     // 상품 업로드
-    @PostMapping("/Product")
+    @PostMapping("/ProductUpdate")
     void upload(@RequestBody ProductDTO product) {
 
         
@@ -70,6 +70,31 @@ public class WebController {
         System.out.println("product update success");
 
     }
+    
+    // 상품 페이지 리스트 불러오기
+    @GetMapping("/ProductDog")
+    public List<ProductDTO> LoadProduct() {
+        System.out.println("product list load");
+        return webMapper.LoadProduct();
+
+    }
+    // 고양이 상품 페이지
+    @GetMapping("/ProductCat")
+    public List<ProductDTO> LoadProductCat() {
+        System.out.println("product list load");
+        return webMapper.LoadProduct();
+
+    }
+    // 상품 상세 조회(1개)
+    @GetMapping("/ProductDetail/{product_num}")
+    public ProductDTO getProduct(@PathVariable int product_num) {
+        System.out.println("product detail");
+        return webMapper.getProduct(product_num);
+
+    }
+    // 찐 완료
+
+
 
     // 마이페이지 고객정보
     @GetMapping("/loadMember")
@@ -78,20 +103,6 @@ public class WebController {
         return webMapper.LoadMember();
     }
 
-    // 상품 페이지 리스트 불러오기
-    @GetMapping("/ProductList2")
-    public List<ProductDTO> LoadProduct() {
-        System.out.println("product list load");
-        return webMapper.LoadProduct();
 
-    }
-
-    // 상품 상세 조회(1개)
-    @GetMapping("/ProductDetail/{product_num}")
-    public ProductDTO getProduct(@PathVariable int product_num) {
-        System.out.println("product detail");
-        return webMapper.getProduct(product_num);
-
-    }
 
 }

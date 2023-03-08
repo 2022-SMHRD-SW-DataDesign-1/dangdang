@@ -14,7 +14,7 @@ const Main = () => {
       </div>
 
       <span className='icon'>
-      <a href='/ProductList2'>
+      <a href='/ProductDog'>
         <div className='icon1'>
           <h1>
             댕댕 용품
@@ -23,7 +23,7 @@ const Main = () => {
             src={require("../Img/강아지_c.png")} alt="dog2" />  
         </div>
         </a>
-        <a href='/ProductList2'>
+        <a href='/ProductCat'>
         <div className='icon2'>
           
           <h1>

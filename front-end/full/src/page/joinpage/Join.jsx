@@ -69,7 +69,7 @@ const Join = () => {
             // user 데이터 넘어옴
             console.log(response.data);
             console.log("회원가입 성공");
-            navigate("/Main");
+            navigate("/");
 
         } catch (error) {
             console.error(error);

@@ -27,10 +27,16 @@
     SELECT user_num, id, name, phone, email, address fROM users
   </select>
 
-
-
+  <select id="LoadProductCat" resultType="com.full.full.model.ProductDTO">
+    SELECT product_num, name, price, description, image
+    FROM products
+    WHERE category LIKE '%강아지%'
+  </select>
+  
   <select id="LoadProduct" resultType="com.full.full.model.ProductDTO">
-    SELECT product_num, name, price, description, image, category fROM  products
+    SELECT product_num, name, price, description, image
+    FROM products
+    WHERE category LIKE '%고양이%'
   </select>
 
   <select id="getProduct" resultType="com.full.full.model.ProductDTO">
