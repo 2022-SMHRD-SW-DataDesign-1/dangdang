@@ -12,7 +12,8 @@ import Join from '../page/joinpage/Join'
 import Login from '../page/loginpage/Login'
 import ProductList2 from '../page/productList/ProductList2'
 import ProductUpdate from '../page/productUpdate/ProductUpdate'
-import Mypage from '../page/mypage/Mypage';
+import Mypage from '../page/mypage/Mypage'
+import Orderpage from '../page/orderpage/OrderPage'
 
 const AppRouter = () => {
     return (
@@ -33,6 +34,7 @@ const AppRouter = () => {
                     <Route path="/ProductList2" element={<ProductList2/>} />
                     <Route path="/ProductUpdate" element={<ProductUpdate/>} />
                     <Route path="/Mypage" element={<Mypage/>} />
+                    <Route path="/Orderpage" element={<Orderpage/>} />
                 </Routes>
             </BrowserRouter>
         </div>
