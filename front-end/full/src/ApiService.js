@@ -23,7 +23,7 @@ class ApiService {
   }
   // 상품 정보 불러오기
   LoadProduct() {
-    return axios.get(BASE_URL + "/loadProduct")
+    return axios.get(BASE_URL + "/ProductList2")
   }
   // 상품 업로드
   Uploadproduct(product) {

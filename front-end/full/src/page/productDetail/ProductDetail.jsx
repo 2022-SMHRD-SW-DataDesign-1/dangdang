@@ -19,6 +19,7 @@ const ProductDetail = () => {
       .then((res) => {
         setProduct(res.data); // 선택한 제품의 데이터 저장
         console.log(res.data);
+        console.log("야");
       })
       .catch((err) => {
         console.log('axios 에러', err);

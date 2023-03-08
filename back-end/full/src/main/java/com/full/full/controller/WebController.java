@@ -79,7 +79,7 @@ public class WebController {
     }
 
     // 상품 페이지 리스트 불러오기
-    @GetMapping("/loadProduct")
+    @GetMapping("/ProductList2")
     public List<ProductDTO> LoadProduct() {
         System.out.println("product list load");
         return webMapper.LoadProduct();
@@ -91,6 +91,7 @@ public class WebController {
     public ProductDTO getProduct(@PathVariable int product_num) {
         System.out.println("product detail");
         return webMapper.getProduct(product_num);
+
     }
 
 }

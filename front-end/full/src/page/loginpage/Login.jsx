@@ -36,7 +36,7 @@ const Login = () => {
         console.log(res.data);
         if (res.data === 'success') {
           // sessionStorage.setItem("info", JSON.stringify(user));
-          window.sessionStorage.setItem("login", res.data);
+          window.sessionStorage.setItem("loginUser", res.data);
           setLoggedIn(true);
           console.log(loggedIn);
           // false??
