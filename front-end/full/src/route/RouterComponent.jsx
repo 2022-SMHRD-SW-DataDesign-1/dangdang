@@ -10,8 +10,8 @@ import LoadProduct from '../page/Test/ProductLoad'
 import Main from '../page/mainpage/Main'
 import Join from '../page/joinpage/Join'
 import Login from '../page/loginpage/Login'
-import ProductListDog from '../page/productList/ProductListDog'
-import ProductListCat from '../page/productList/ProductListCat';
+import ProductDog from '../page/productList/ProductDog'
+import ProductCat from '../page/productList/ProductCat';
 import ProductUpdate from '../page/productUpdate/ProductUpdate'
 import ProductDetail from '../page/productDetail/ProductDetail'
 import Mypage from '../page/mypage/Mypage'
@@ -34,8 +34,8 @@ const AppRouter = () => {
                     <Route path="/" element={<Main />} />
                     <Route path="/Join" element={<Join />} />
                     <Route path="/Login" element={<Login />} />
-                    <Route path="/ProductDog" element={<ProductListDog />} />
-                    <Route path="/ProductCat" element={<ProductListCat />} />
+                    <Route path="/ProductDog" element={<ProductDog />} />
+                    <Route path="/ProductCat" element={<ProductCat />} />
 
                     <Route path="/ProductUpdate" element={<ProductUpdate />} />
 

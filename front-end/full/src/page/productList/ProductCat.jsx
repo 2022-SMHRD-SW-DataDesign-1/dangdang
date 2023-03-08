@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import ApiService from "../../ApiService";
 import Footer from '../Footer'
 import Header from '../Header'
-import './ProductListDog.css'
+import './ProductDog.css'
 
-const ProductListCat = () => {
+const ProductCat = () => {
 
     const [Products, setProducts] = useState([]);
     const menuArr = [
@@ -83,4 +83,4 @@ const ProductListCat = () => {
     )
 }
 
-export default ProductListCat
+export default ProductCat

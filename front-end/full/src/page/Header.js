@@ -17,12 +17,14 @@ const Header = () => {
 
     return (
         <header className='header'>
-            
-            <h1 style={{ marginLeft: "2%" }}>댕냥이</h1>
+            <a className='h11' href='/' >
+            <h1>댕냥이</h1>
+            </a>
             <nav>
                 <ul className='ul1'>
-                    <li> Dog </li>
-                    <li  className='tab' > Cat </li>
+                    
+                    <li><a href='/ProductDog'> Dog </a></li>
+                    <li  className='tab' ><a href='/ProductCat'> Cat </a></li>
                 </ul>
 
             </nav>
@@ -34,7 +36,7 @@ const Header = () => {
                     <a href='/Join'>
                         회원가입
                     </a>
-                    <a>
+                    <a href='/OrderPage'>
                         주문조회
                     </a>
                 </ul>

@@ -1,0 +1,19 @@
+.box-tab{
+    text-align: center;
+}
+
+@media screen and (max-width:768px) {
+    
+    div.submenu.focused{
+        width: 20vw;
+    }
+    div.submenu{
+        width: 20vw;
+        flex-basis: max-content;
+    }
+    ul{
+        width:80vw;
+        margin-left:1.5rem;
+    }
+    
+}
