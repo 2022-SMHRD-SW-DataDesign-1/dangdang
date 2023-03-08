@@ -1,0 +1,77 @@
+.body {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    font-family: "BMJUA_ttf";
+    color: #3B6EAE;
+}
+
+.welcome {
+    font-family: "BMJUA_ttf";
+    display: inline-block;
+    /* float: right; */
+    font-size: 2rem;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    text-align: center;
+}
+
+.icon {
+    margin-top: 2.2rem;
+    text-align: center;
+    color: #3B6EAE;
+}
+
+.icon1 {
+    width:40vw;
+    height: 40vh;
+    display: inline-block;
+}
+
+.icon2 {
+    height: 40vh;
+    float: right;
+    margin-right: 25rem;
+}
+.dangImg, .catImg{
+    width: 20vw;
+}
+@media screen and (max-width:768px) {
+    .icon1>img {
+        position: absolute;
+        /* height: 15%; */
+        /* width: 30%; */
+        /* height: 100%; */
+        top: 40%;
+        /* left: 50%; */
+        transform: translate(-50%, -50%);
+    }
+    .icon1>h1{
+        font-size: 1.5rem;
+        
+    }
+    .icon2>img {
+        /* position: absolute; */
+        /* height: 15%; */
+        /* width: 30%; */
+        /* height: 100%; */
+        top: 70%;
+        left: 50%;
+        /* transform: translate(-50%, -50%); */
+    }
+    .icon2>h1{
+        font-size: 1.5rem;
+
+    }
+    .icon1 {
+        height: 26vh;
+        
+    }
+    
+    .icon2 {
+        height: 26vh;
+        margin:auto;
+        margin-right: 13rem;
+    }
+    
+}
