@@ -63,26 +63,31 @@ public class WebController {
     // 상품 업로드
     @PostMapping("/ProductUpdate")
     void upload(@RequestBody ProductDTO product) {
-
+        String absolutePath = "C:\\Users\\smhrd\\Desktop\\full\\front-end\\full\\src\\page\\Img\\product"; // 이미지 폴더의 절대 경로
         
-
+        String imageFileName = product.getImage(); // 업로드된 이미지 파일 이름
+        int lastIndex = imageFileName.lastIndexOf(imageFileName);
+        String imagePath = absolutePath + lastIndex; // 이미지 파일의 절대 경로
+    
+        product.setImage(imagePath); // ProductDTO 객체에 이미지 경로 설정
+    
         webMapper.Uploadproduct(product);
         System.out.println("product update success");
-
     }
     
     // 상품 페이지 리스트 불러오기
     @GetMapping("/ProductDog")
     public List<ProductDTO> LoadProduct() {
-        System.out.println("product list load");
+        System.out.println("product dog list load");
+        System.out.println("그만할래...");
         return webMapper.LoadProduct();
 
     }
     // 고양이 상품 페이지
     @GetMapping("/ProductCat")
     public List<ProductDTO> LoadProductCat() {
-        System.out.println("product list load");
-        return webMapper.LoadProduct();
+        System.out.println("product cat list load");
+        return webMapper.LoadProductCat();
 
     }
     // 상품 상세 조회(1개)

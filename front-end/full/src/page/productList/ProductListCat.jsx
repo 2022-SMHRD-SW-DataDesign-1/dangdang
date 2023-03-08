@@ -24,11 +24,11 @@ const ProductListCat = () => {
                 console.log(res.data);
                 const products = res.data.map((product) => {
                     return {
-                        num : product.product_num,
+                        num: product.product_num,
                         name: product.name,
                         price: product.price,
                         image: product.image,
-                        category : product.category
+                        category: product.category
                     };
                 });
                 setProducts(products);
@@ -56,10 +56,11 @@ const ProductListCat = () => {
                 {Products.map((product) => (
                     <div key={product.product_num} className="product-item">
                         <Link to={`/ProductDetail/${product.product_num}`}>
-                            <img style={{ width: "30rem", height: "30rem" }}
-                                src={require("../Img/product1.jpg")} alt="사료" />
-                        <h3 className='productname'>{product.name}</h3>
-                        <h4> {product.price}원</h4>
+                            <img style={{ width: "30rem", height: "30rem" }} 
+                                src={(`/${product.image}.jpg`)} alt="사료" />
+
+                            <h3 className='productname'>{product.name}</h3>
+                            <h4> {product.price}원</h4>
                         </Link>
                     </div>
                 ))}

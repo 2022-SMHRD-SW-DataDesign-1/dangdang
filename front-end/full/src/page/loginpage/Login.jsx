@@ -13,7 +13,6 @@ const Login = () => {
     password: ''
   });
 
-  const [loggedIn, setLoggedIn] = useState(false);
 
   const onChange = (e) => {
     setState({
@@ -37,10 +36,9 @@ const Login = () => {
         if (res.data === 'success') {
           // sessionStorage.setItem("info", JSON.stringify(user));
           window.sessionStorage.setItem("loginUser", res.data);
-          setLoggedIn(true);
-          console.log(loggedIn);
+          console.log("그만하고 싶엇요");
           // false??
-          navigate("/Login");
+          navigate("/");
         } else {
           alert('아이디 또는 비밀번호가 올바르지 않습니다.');
           setState({
@@ -53,17 +51,6 @@ const Login = () => {
         console.log("axios 에러", err);
       });
   };
-
-  const logout = () => {
-    console.log('로그아웃클릭')
-    sessionStorage.setItem("login", false);
-    setLoggedIn(false);
-    sessionStorage.clear();
-    console.log("로그아웃 확인");
-    console.log(loggedIn);
-    // true?
-    // window.location.replace("/")
-  }
 
 
 
@@ -105,7 +92,6 @@ const Login = () => {
             <button onClick={LoginUser} formAction=''>
               Login
             </button>
-            {loggedIn && <button onClick={logout} name='logout'>로그아웃</button>}
 
             <button formAction='' style={{ marginLeft: "1rem"}}>
               Join us
