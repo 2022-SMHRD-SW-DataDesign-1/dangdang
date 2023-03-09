@@ -65,8 +65,6 @@ a{
         /* margin: 0; */
         padding: 0;
         text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-        
-        
     }
     .ul2{
         display: flex;
@@ -74,18 +72,24 @@ a{
         justify-content: center;
         width:100%;
         margin-left: 45rem;
-        margin-top: -9vh;
+        margin-top: -13vh;
     }
     
     .ul.tab{
         margin-left:5rem;
     }
     .ul{
-        width: 56vw;
+        /* width: 63vw; */
         margin-left: 3.5rem;
+        
     }
     a{
         margin: 0;
+    }
+    ul.ul1{
+       
+        display: flex;
+        justify-content: center;
     
     }
 }
