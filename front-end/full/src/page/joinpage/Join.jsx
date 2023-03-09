@@ -145,8 +145,8 @@ const Join = () => {
 
 
                     {/* 다음 api 여기에 넣어야함 */}
-                    <p style={{paddingLeft:'23px'}}>주소: {address}</p>
-                    <button onClick={openDaumPostcode}>우편번호 검색</button>
+                    {/* <p style={{paddingLeft:'23px'}}>주소: {address}</p>
+                    <button onClick={openDaumPostcode}>우편번호 검색</button> */}
                     {/* <input type="text" placeholder='상세주소를 기입해주세요' /> */}
 
                     {/* <DaumPostcodeEmbed onChange={(e) => SetAddress(e.target.value)} value={address} ></DaumPostcodeEmbed> */}
