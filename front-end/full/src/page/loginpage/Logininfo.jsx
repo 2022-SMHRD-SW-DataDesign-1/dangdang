@@ -19,7 +19,7 @@ const Logininfo = () => {
     if (info1 == null) {
         return (
             <div >
-                <a href='/Login'>
+                <a  style={{marginRight:"1rem"}} href='/Login'>
                     로그인
                 </a>
                 <a href='/Join'>
@@ -31,10 +31,10 @@ const Logininfo = () => {
         return (
             <div>
                 <div>
-                    <a href='/OrderPage'>
+                    <a style={{marginRight:"1rem"}} href='/OrderPage'>
                         주문조회
                     </a>
-                    <button onClick={logout}>로그아웃</button>
+                    <a onClick={logout}>로그아웃</a>
                 </div>
             </div>
         )
