@@ -31,10 +31,9 @@ const Header = () => {
             <a className='h11' href='/' >
             <h1>댕냥이</h1>
             </a>
-            <nav>
+            <nav >
                 <ul className='ul1'>
-                    
-                    <li><a href='/ProductDog'> Dog </a></li>
+                    <li ><a href='/ProductDog'> Dog </a></li>
                     <li  className='tab' ><a href='/ProductCat'> Cat </a></li>
                 </ul>
 
