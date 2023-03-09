@@ -37,6 +37,7 @@ const Login = (props) => {
         if (res.data === 'success') {
           // sessionStorage.setItem("info", JSON.stringify(user));
           window.sessionStorage.setItem("loginUser", res.data);
+          console.log(res.data);
           console.log("그만하고 싶엇요");
           // false??
           navigate("/");

@@ -16,6 +16,8 @@ const Logininfo = () => {
     // 로그아웃 버튼을 클릭하면 seesionStorage를 비우고 페이지를 다시 로드한다.
     console.log(info1);
 
+    // amdin 로그인 했을 때 나올 수 있게 로직 하나 만들면 될 것 같음 
+    // ex) REST API 써서 ADMINCHECK 함수 만들기...
     if (info1 == null) {
         return (
             <div >
