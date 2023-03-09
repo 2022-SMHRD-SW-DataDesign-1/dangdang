@@ -23,7 +23,7 @@ const Join = () => {
     const [address, SetAddress] = useState("")
 
     const [IdCheck, SetIdCheck] = useState(false)
-    // const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [insertad, setinsertad] = useState(false)
 
     // 아이디 중복체크
     const handleIdcheck = async (e) => {
@@ -44,6 +44,8 @@ const Join = () => {
             alert("아이디 확인 실패");
         }
     };
+    // 주소 받아오는 handleAddress 받아와야함
+
 
     // 회원가입 submit 버튼을 클릭하면 실행되는 함수
     const navigate = useNavigate();
@@ -52,7 +54,7 @@ const Join = () => {
         // 이벤트 객체(e)를 매개변수로 받아서 이벤트의 기본 동작을 막고 
         e.preventDefault();
         // 회원가입에 필요한 정보를 객체로 생성
-        if (!IdCheck) {
+        if (!IdCheck || !insertad) {
             alert("아이디 중복을 확인해주세요");
             return;
         }
@@ -139,20 +141,20 @@ const Join = () => {
 
                     <label className='label'>주소</label>
                     <input type="text" onChange={(e) => SetAddress(e.target.value)} value={address} />
-                    <button > 검색 </button>
+                    <button onClick={setinsertad} > 검색 </button>
 
 
                     {/* 다음 api 여기에 넣어야함 */}
-                    {/* <p>주소: {address}</p>
-                    <button onClick={openDaumPostcode}>우편번호 검색</button>
-                    <input type="text" placeholder='상세주소를 기입해주세요' /> */}
+                    {/* <p style={{paddingLeft:'23px'}}>주소: {address}</p>
+                    <button onClick={openDaumPostcode}>우편번호 검색</button> */}
+                    {/* <input type="text" placeholder='상세주소를 기입해주세요' /> */}
 
                     {/* <DaumPostcodeEmbed onChange={(e) => SetAddress(e.target.value)} value={address} ></DaumPostcodeEmbed> */}
                     {/* <input type="text"></input> */}
 
                     <br />
                     <div style={{ textAlign: "center" }}>
-                        <button style={{}} type='submit' name='signup'>회원가입</button>
+                        <button type='submit' name='signup'>회원가입</button>
                     </div>
                 </form>
             </div>
