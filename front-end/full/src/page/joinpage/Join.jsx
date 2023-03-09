@@ -1,11 +1,13 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import ApiService from "../../ApiService";
 import { useNavigate } from "react-router-dom";
+
 
 import Header from '../Header'
 import Footer from '../Footer'
 import '../joinpage/Join.css';
 import '../font/font.css'
+import DaumPostcodeEmbed from 'react-daum-postcode';
 
 const Join = () => {
 
@@ -78,6 +80,14 @@ const Join = () => {
     }
 
 
+    // 다음 주소
+    function openDaumPostcode() {
+        new window.daum.Postcode({
+            oncomplete: function (data) {
+                SetAddress(data.address);
+            }
+        }).open();
+    }
 
 
     return (
@@ -112,17 +122,17 @@ const Join = () => {
                     <button onClick={handleIdcheck} name="checkId" > 중복확인 </button>
 
                     <label className='label'>Password</label>
-                    <input type="password" onChange={(e) => SetPassword(e.target.value)} value={password}  placeholder='  Password를 입력하세요' />
+                    <input type="password" onChange={(e) => SetPassword(e.target.value)} value={password} placeholder='  Password를 입력하세요' />
 
                     <label className='label'>Confirm Password</label>
-                    <input type="password" onChange={(e) => SetConfirmpw(e.target.value)}/>
+                    <input type="password" onChange={(e) => SetConfirmpw(e.target.value)} />
                     {confirmpw && password !== confirmpw && <p>비밀번호가 일치하지 않습니다.</p>}
 
                     <label className='label'>Name</label>
-                    <input type="text" onChange={(e) => SetName(e.target.value)} value={name}  />
+                    <input type="text" onChange={(e) => SetName(e.target.value)} value={name} />
 
                     <label className='label'>Email</label>
-                    <input type="email" onChange={(e) => SetEmail(e.target.value)} value={email}/>
+                    <input type="email" onChange={(e) => SetEmail(e.target.value)} value={email} />
 
                     <label className='label'>Phone</label>
                     <input type="text" onChange={(e) => SetPhone(e.target.value)} value={phone} />
@@ -130,6 +140,15 @@ const Join = () => {
                     <label className='label'>주소</label>
                     <input type="text" onChange={(e) => SetAddress(e.target.value)} value={address} />
                     <button > 검색 </button>
+
+
+                    {/* 다음 api 여기에 넣어야함 */}
+                    {/* <p>주소: {address}</p>
+                    <button onClick={openDaumPostcode}>우편번호 검색</button>
+                    <input type="text" placeholder='상세주소를 기입해주세요' /> */}
+
+                    {/* <DaumPostcodeEmbed onChange={(e) => SetAddress(e.target.value)} value={address} ></DaumPostcodeEmbed> */}
+                    {/* <input type="text"></input> */}
 
                     <br />
                     <div style={{ textAlign: "center" }}>

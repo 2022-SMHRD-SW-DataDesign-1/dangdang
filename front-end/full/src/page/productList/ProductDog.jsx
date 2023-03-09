@@ -24,7 +24,7 @@ const ProductDog = () => {
                 console.log(res.data);
                 const products = res.data.map((product) => {
                     return {
-                        num: product.product_num,
+                        product_num: product.product_num,
                         name: product.name,
                         price: product.price,
                         image: product.image,

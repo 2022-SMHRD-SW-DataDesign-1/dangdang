@@ -63,18 +63,29 @@ public class WebController {
     // 상품 업로드
     @PostMapping("/ProductUpdate")
     void upload(@RequestBody ProductDTO product) {
-        String absolutePath = "C:\\Users\\smhrd\\Desktop\\full\\front-end\\full\\src\\page\\Img\\product"; // 이미지 폴더의 절대 경로
-        
+        String absolutePath = "C:/Users/smhrd/Desktop/full/front-end/full/src/page/Img/product/";
+        // 이미지 폴더의 절대 경로
         String imageFileName = product.getImage(); // 업로드된 이미지 파일 이름
+        System.out.println(imageFileName);
+        String extension = imageFileName.substring(imageFileName.lastIndexOf(".")); // 확장자 추출
+        System.out.println(extension);
         int lastIndex = imageFileName.lastIndexOf(imageFileName);
-        String imagePath = absolutePath + lastIndex; // 이미지 파일의 절대 경로
-    
+        System.out.println(lastIndex);
+        String imagePath = absolutePath + lastIndex + extension; // 이미지 파일의 절대 경로
+
+        // String absolutePath =
+        // "C:\\Users\\smhrd\\Desktop\\full\\front-end\\full\\src\\page\\Img\\product";
+        // String fileName = product.getImage(); // 업로드된 이미지 파일 이름
+        // String extension = fileName.substring(fileName.lastIndexOf(".")); // 확장자 추출
+        // String imagePath = absolutePath + "\\" + fileName.replace(extension, "") +
+        // extension; // 이미지 파일의 절대 경로
+
         product.setImage(imagePath); // ProductDTO 객체에 이미지 경로 설정
-    
+
         webMapper.Uploadproduct(product);
         System.out.println("product update success");
     }
-    
+
     // 상품 페이지 리스트 불러오기
     @GetMapping("/ProductDog")
     public List<ProductDTO> LoadProduct() {
@@ -83,6 +94,7 @@ public class WebController {
         return webMapper.LoadProduct();
 
     }
+
     // 고양이 상품 페이지
     @GetMapping("/ProductCat")
     public List<ProductDTO> LoadProductCat() {
@@ -90,16 +102,18 @@ public class WebController {
         return webMapper.LoadProductCat();
 
     }
+
     // 상품 상세 조회(1개)
     @GetMapping("/ProductDetail/{product_num}")
     public ProductDTO getProduct(@PathVariable int product_num) {
+        System.out.println(product_num);
         System.out.println("product detail");
         return webMapper.getProduct(product_num);
 
     }
+
+
     // 찐 완료
-
-
 
     // 마이페이지 고객정보
     @GetMapping("/loadMember")
@@ -107,7 +121,5 @@ public class WebController {
         System.out.println("user list load");
         return webMapper.LoadMember();
     }
-
-
 
 }

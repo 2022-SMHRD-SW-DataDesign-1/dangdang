@@ -14,6 +14,7 @@ const ProductDetail = () => {
     loadProduct(parseInt(product_num));
   }, [product_num]);
 
+  
   const loadProduct = (product_num) => {
     ApiService.getProduct(product_num)
       .then((res) => {

@@ -54,11 +54,10 @@ const ProductCat = () => {
             </div>
             <div className="pn" >
                 {Products.map((product) => (
-                    <div key={product.product_num} className="product-item">
+                    <div className="product-item">
                         <Link to={`/ProductDetail/${product.product_num}`}>
-                            <img style={{ width: "30rem", height: "30rem" }} 
-                                src={(`/${product.image}.jpg`)} alt="사료" />
-
+                            <img style={{ width: "30rem", height: "30rem" }}
+                                src={(`../Img/${product.image}`).default} alt="사료" />
                             <h3 className='productname'>{product.name}</h3>
                             <h4> {product.price}원</h4>
                         </Link>
