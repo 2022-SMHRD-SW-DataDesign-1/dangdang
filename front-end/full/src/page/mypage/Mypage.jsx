@@ -5,7 +5,7 @@ import './Mypage.css'
 
 const Mypage = () => {
   return (
-    <div style={{ backgroundColor: "#FDFDF6", display: "flex", flexDirection: "column", fontFamily: "BMJUA_ttf" }}>
+    <div style={{ backgroundColor: "#FDFDF6", display: "flex", flexDirection: "column", fontFamily: "웰컴체 Bold.ttf" }}>
       <Header />
       <h1 className='title'> MY PAGE </h1>
       <div className='b1'>

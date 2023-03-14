@@ -26,18 +26,19 @@ ul {
 .prdDetail_table li {
     margin-bottom: 10px;
     display: flex;
+    font-family: "웰컴체 Bold.ttf";
 }
 .prd_name{
     font-size: 40px;
     color:rgb(58, 58, 58);
-    font-weight: bold;
     font-weight: lighter;
     margin-top: 3rem;
+    font-family: "웰컴체 Bold.ttf";
 }
 .prd_price{
     font-size: 35px;
     color: #3B6EAE;
-    margin-left: 20rem;
+    margin-left: 19rem;
     margin-top: 1.5rem;
 }
 .prd_des{
@@ -52,7 +53,15 @@ ul {
     margin-top: 14rem;   
 }
 .btn2{
-    font-size: 30px;
+    font-size: 27px;
     width: 10rem;
     height: 4rem;
+    text-align: center;
+    box-shadow: 3px 5px 10px -6px rgba(1,1,1,1);
+}
+.btn2 .cart{
+    font-size: 1.5rem;
+    margin-right: 2rem;
+    /* box-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; */
+    
 }

@@ -5,7 +5,7 @@ const Footer = () => {
   return (
         <div style={{
             backgroundColor:"#F5F16F", 
-            fontFamily: "BMJUA_ttf", 
+            fontFamily: "웰컴체 Bold.ttf", 
             textAlign:"center", 
             position:"fixed",
             bottom: "0",

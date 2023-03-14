@@ -60,7 +60,7 @@ const ProductUpdate = () => {
 
 
     return (
-        <div style={{ backgroundColor: "#FDFDF6", display: "flex", flexDirection: "column", fontFamily: "BMJUA_ttf" }}>
+        <div style={{ backgroundColor: "#FDFDF6", display: "flex", flexDirection: "column", fontFamily: "웰컴체 Bold.ttf" }}>
             <Header />
             <div>
                 <form onSubmit={handleRegister}
@@ -109,7 +109,7 @@ const ProductUpdate = () => {
                     </span>
                     <br />
                     <input style={{
-                        fontFamily: "BMJUA_ttf",
+                        fontFamily: "웰컴체 bold.ttf",
                         width: "5rem",
                         height: "2rem",
                         fontSize: "1rem",

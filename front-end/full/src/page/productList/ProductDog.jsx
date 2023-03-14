@@ -5,6 +5,7 @@ import Footer from '../Footer'
 import Header from '../Header'
 import './ProductDog.css'
 
+
 const ProductDog = () => {
 
     const [Products, setProducts] = useState([]);
@@ -42,7 +43,7 @@ const ProductDog = () => {
     return (
         <div>
             <Header />
-            <div style={{ textAlign: "center", marginTop: "3rem" }}>
+            <div style={{ textAlign: "center", marginTop: "3rem", fontFamily:"웰컴체 Bold.ttf" }}>
                 {menuArr.map((kind, index) => {
                     return (
                         <>

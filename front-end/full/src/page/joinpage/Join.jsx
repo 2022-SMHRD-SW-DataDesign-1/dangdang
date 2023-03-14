@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import ApiService from "../../ApiService";
 import { useNavigate } from "react-router-dom";
-
-
 import Header from '../Header'
 import Footer from '../Footer'
 import '../joinpage/Join.css';
@@ -93,7 +91,7 @@ const Join = () => {
 
 
     return (
-        <div style={{ backgroundColor: "#FDFDF6", display: "flex", flexDirection: "column", fontFamily: "BMJUA_ttf" }}>
+        <div style={{ backgroundColor: "#FDFDF6", display: "flex", flexDirection: "column", fontFamily: "웰컴체 Bold.ttf" }}>
             <Header />
             <div>
 
@@ -114,7 +112,7 @@ const Join = () => {
                     }}>
                     <div>
                         <h1 style={{
-                            fontFamily: "BMJUA_ttf",
+                            fontFamily: "웰컴체 Bold.ttf",
                             fontWeight: "lighter",
                             textAlign: "center",
                         }}> 회원가입 </h1>
@@ -127,20 +125,20 @@ const Join = () => {
                     <input type="password" onChange={(e) => SetPassword(e.target.value)} value={password} placeholder='  Password를 입력하세요' />
 
                     <label className='label'>Confirm Password</label>
-                    <input type="password" onChange={(e) => SetConfirmpw(e.target.value)} />
+                    <input type="password" onChange={(e) => SetConfirmpw(e.target.value)} placeholder='  비밀번호 재확인' />
                     {confirmpw && password !== confirmpw && <p>비밀번호가 일치하지 않습니다.</p>}
 
                     <label className='label'>Name</label>
-                    <input type="text" onChange={(e) => SetName(e.target.value)} value={name} />
+                    <input type="text" onChange={(e) => SetName(e.target.value)} value={name} placeholder='  이름을 입력하세요' />
 
                     <label className='label'>Email</label>
-                    <input type="email" onChange={(e) => SetEmail(e.target.value)} value={email} />
+                    <input type="email" onChange={(e) => SetEmail(e.target.value)} value={email} placeholder='  이메일을 입력하세요' />
 
                     <label className='label'>Phone</label>
-                    <input type="text" onChange={(e) => SetPhone(e.target.value)} value={phone} />
+                    <input type="text" onChange={(e) => SetPhone(e.target.value)} value={phone} placeholder='  번호를 입력하세요'/>
 
                     <label className='label'>주소</label>
-                    <input type="text" onChange={(e) => SetAddress(e.target.value)} value={address} />
+                    <input type="text" onChange={(e) => SetAddress(e.target.value)} value={address} placeholder='  주소를 입력하세요'/>
                     <button onClick={setinsertad} > 검색 </button>
 
 

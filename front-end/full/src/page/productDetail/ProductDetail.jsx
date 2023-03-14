@@ -28,7 +28,7 @@ const ProductDetail = () => {
   };
 
   return (
-    <div style={{ backgroundColor: "#FDFDF6", display: "flex", flexDirection: "column", fontFamily: "BMJUA_ttf" }}>
+    <div style={{ backgroundColor: "#FDFDF6", display: "flex", flexDirection: "column", fontFamily: "웰컴체 Bold.ttf" }}>
       <Header />
       <h1 className='title'>상품 상세페이지</h1>
       <div className='detailArea'>
@@ -45,10 +45,10 @@ const ProductDetail = () => {
           </ul>
           <div className='buy'>
             <button className='btn2'>
-              <a>장바구니</a>
+              <a className='cart'>장바구니</a>
             </button>
             <button className='btn2'>
-              <a>구매하기</a>
+              <a className='cart'>구매하기</a>
             </button>
           </div>
         </div>

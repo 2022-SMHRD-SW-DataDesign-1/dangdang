@@ -4,33 +4,29 @@
     align-items: center;
     justify-content: space-between;
     height: 15vh;
-    background-color: #F7F7D1;
-    font-family: "BMJUA_ttf";
+    background-color: #B5D0E5;
+    font-family: "웰컴체 Bold.ttf";
     font-size: 30px;
     text-align: center;
     color: #3B6EAE;
 }
 
+
 .ul1>li>a{
-    display: flex;
-    font-family: "BMJUA_ttf";
-    font-size: 4rem;
-    color: #B5D0E5;
+    flex-direction: row;
+    display: inline-flex;
+    font-family: "웰컴체 Bold.ttf";
+    font-size: 3rem;
+    /* color: #FAF66A; */
     text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
     
 }
-.ul1.tab{
-    margin-left: 14rem;
-    margin-top: -4rem;
-}
-.ul>li.tab{
-    margin-left: "15rem";
-    margin-top: -4rem;
-}
+
 a{
     color: #3B6EAE;
     margin-left: 30px;
     text-decoration: none;
+    
 }
 .ul2{
     display: flex;
@@ -39,6 +35,16 @@ a{
     font-size: 1.5rem;
     float: right;
     padding-left: 0;
+}
+.ul1{
+    
+    display: flex;
+    margin-top: 3rem;
+    margin-right: 47rem;
+    /* text-decoration: underline; */
+}
+.ul1 .tab{
+    margin-left: 8rem;
 }
 
 @media screen and (max-width:768px) {

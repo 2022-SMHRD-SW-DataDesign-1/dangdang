@@ -60,7 +60,7 @@ const Login = (props) => {
 
 
   return (
-    <div style={{ backgroundColor: "#FDFDF6", display: "flex", flexDirection: "column", fontFamily: "BMJUA_ttf" }}>
+    <div style={{ backgroundColor: "#FDFDF6", display: "flex", flexDirection: "column", fontFamily: "웰컴체 Bold.ttf" }}>
       <Header />
       <div >
         <form className="box1"
@@ -74,12 +74,13 @@ const Login = (props) => {
             backgroundColor: "#F7F7D1",
             boxShadow: "3px 3px 5px 0px #E7E7F6",
             borderRadius:"10px",
-            color:"#3B6EAE"
+            color:"#3B6EAE",
+            fontFamily: "웰컴체 Bold.ttf"
           }}>
           <h1 style={{ 
             marginTop: "-1rem", 
             marginBottom: "4rem", 
-            fontFamily: "BMJUA_ttf", 
+            fontFamily: "웰컴체 Bold.ttf", 
             fontWeight:"lighter",
             textAlign:"center"
             }}> 로그인 </h1>

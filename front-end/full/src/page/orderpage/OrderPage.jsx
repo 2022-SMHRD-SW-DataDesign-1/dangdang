@@ -52,7 +52,7 @@ const OrderPage = () => {
 
 
     return (
-        <div style={{ backgroundColor: "#FDFDF6", display: "flex", flexDirection: "column", fontFamily: "BMJUA_ttf", height:"1000px" }}>
+        <div style={{ backgroundColor: "#FDFDF6", display: "flex", flexDirection: "column", fontFamily: "웰컴체 Bold.ttf", height:"1000px" }}>
             <Header />
             <div>
                 <h1 className='title'>주문조회</h1>

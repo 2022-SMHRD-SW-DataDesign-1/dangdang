@@ -1,5 +1,18 @@
 
+
 @font-face {
-    font-family: "BMJUA_ttf";
-    src: url("./BMJUA_ttf.ttf");
-  }
+  font-family: 'OTWelcomeRA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeRA.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "웰컴체 Bold.ttf";
+  src: url("./웰컴체 Bold.ttf");
+}
+@font-face {
+  font-family: "웰컴체 Regular.ttf";
+  src: url("./웰컴체 Regular.ttf");
+}
+

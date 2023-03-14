@@ -2,12 +2,12 @@
     height: 15vh;
     display: flex;
     flex-direction: column;
-    font-family: "BMJUA_ttf";
+    font-family: "웰컴체 Bold.ttf";
     color: #3B6EAE;
 }
 
 .welcome {
-    font-family: "BMJUA_ttf";
+    font-family: "웰컴체 Bold.ttf";
     display: inline-block;
     /* float: right; */
     font-size: 2rem;
